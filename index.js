@@ -34,9 +34,9 @@ const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Affis Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=5511973027044:+55 11 97302-7044\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=5512997277680:+55 12 99727-7680\n' 
             + 'END:VCARD' 
-prefix = '.'
+prefix = '/'
 blocked = []          
 
 /********** LOAD FILE **************/
@@ -51,9 +51,9 @@ const config = {
     instagram: 'https://www.instagram.com/n1ckzz1n/', 
     nomer: 'wa.me/5512997277680',
     youtube: 'https://youtu.be/D58GrbAC1fA', 
-    whatsapp: 'Comming soon', 
-    encontro: `ENCONTRO: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
-    Tempo: Tempo
+    whatsapp: 'Em breve', 
+    tanggal: `ENCONTRO: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
+    waktu: time
 }
 
 function kyun(seconds){
@@ -107,7 +107,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Fala fioti @${num.split('@')[0]}\ seja bem vindo/a ao grupo *${mdata.subject}* comportasse para não ganha ban, tlgd?`
+				teks = `oiee @${num.split('@')[0]}\ seja bem vindo/a ao grupo *${mdata.subject}* comportasse para nao ganha ban`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -117,7 +117,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Tchau fioti @${num.split('@')[0]} Um dia nos reencontraremos`
+				teks = `xauu pessoa @${num.split('@')[0]} quem sabe possa voltar`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -152,10 +152,10 @@ client.on('group-participants-update', async (anu) => {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '❬❗❭Fica paciente ai namoralzinha❬❗❭',
-				success: '️❬ ✔ ❭ Toma ai 🖤',
+				wait: '❬❗❭Pera ai, blz tio?❬❗❭',
+				success: '️❬ ✔ ❭ Pronto meu principe🖤',
 				error: {
-					stick: 'Eu falhei com vc :( diculpa',
+					stick: 'Eu falhei :( diculpa',
 					Iv: 'Diculpa, o link está inválido☹️'
 				},
 				only: {
@@ -231,7 +231,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'hidetag':
 					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply('quem e vc?')
+					if (!isOwner) return reply('quem é tu?')
 					var value = body.slice(9)
 					var group = await client.groupMetadata(from)
 					var member = group['participants']
@@ -273,7 +273,7 @@ case 'lofi':
                          contextInfo: {mentionedJid: [nomor]},
                      }
                     client.sendMessage('5512997277680@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('PDP PARZA, BUGZZIN FOI REPORTADO, SE FOR MENTIRA VAI SER COBRADO😡✌🏼')
+                    reply('PDP PARSA, BUG FOI REPORTADO, SE FOR MENTIRA VAI SER COBRADO🙄✌🏼')
                     break
 					case 'marcar':
 					members_id = []
@@ -340,7 +340,7 @@ case 'lofi':
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 					break
                 case 'logo3d':
-              	    if (args.length < 1) return reply('qual txt lindx??')
+              	    if (args.length < 1) return reply('qual txt principe??')
                     teks = `${body.slice(8)}`
                     if (teks.length > 10) return client.sendMessage(from, 'limite de 10 letras', text, {quoted: mek})
                     buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
@@ -445,7 +445,7 @@ case 'lofi':
 				case 'audio':
 					if (args.length < 1) return client.sendMessage(from, 'idioma e nescessario!!', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, 'qual txt vc quer q eu fale lindu?', text, {quoted: mek})
+					if (args.length < 2) return client.sendMessage(from, 'qual txt vc quer q eu fale meu principe?', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
@@ -489,13 +489,13 @@ case 'lofi':
 					break
 				case 'clearall':
 				case 'limpar':
-					if (!isOwner) return reply(' quem e tu?')
+					if (!isOwner) return reply('quem e tu?')
 					anu = await client.chats.all()
 					client.setMaxListeners(25)
 					for (let _ of anu) {
 						client.deleteChat(_.jid)
 					}
-					reply('esta limpo mestre  :)')
+					reply('esta limpo ó deus grego  :)')
 					break
 			       case 'bloquear':
 					if (!isGroup) return reply(mess.only.group)
@@ -515,7 +515,7 @@ case 'lofi':
 				await client.client.leaveGroup(from, 'adeus...', groupId)
                     break
 				case 'bc': 
-					if (!isOwner) return reply(' so meu criador') 
+					if (!isOwner) return reply(' so meu criador pode usar caraiu') 
 					if (args.length < 1) return reply('.......')
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
@@ -575,7 +575,7 @@ case 'lofi':
             case 'creator':
             case 'criador':
             case 'keke':
-                  client.sendMessage(from, {displayname: "Nickzzin adm", vcard: vcard}, MessageType.contact, { quoted: mek})
+                  client.sendMessage(from, {displayname: "keke adm", vcard: vcard}, MessageType.contact, { quoted: mek})
        client.sendMessage(from, 'Este é o número do meu criador ^-^ ',MessageType.text, { quoted: mek} )
            break    
            case 'setname':
@@ -592,11 +592,10 @@ case 'lofi':
 			    if (!isGroupAdmins) return reply(mess.only.admin)
 				if (!isBotGroupAdmins) return reply(mess.only.Badmin)
                 client.groupUpdateDescription(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'descricao trocada cm sucesso', text, {quoted: mek})
+                client.sendMessage(from, 'descricao trocada cum susexso', text, {quoted: mek})
                 break
            case 'demote':
            case 'rebaixar':
-           case 'rebaixar'
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
@@ -670,7 +669,7 @@ case 'lofi':
 					break
 				case 'toimg':
 				case 'converter':
-					if (!isQuotedSticker) return reply('marca a fig inteligente')
+					if (!isQuotedSticker) return reply('marca a fig meu queridx')
 					reply(mess.wait)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
