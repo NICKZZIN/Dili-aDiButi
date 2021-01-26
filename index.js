@@ -152,18 +152,18 @@ client.on('group-participants-update', async (anu) => {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '🥀Pera ai, blz ?🥀',
-				success: '️Pronto meu prinzipe/princeza🖤',
+				wait: '👺Pera ai, blz ?👺',
+				success: '️Pronto meu prinzipe/princeza👺',
 				error: {
-					stick: '🩸Eu falhei :( diculpa🩸',
-					Iv: 'Diculpa, o link está inválido☹️'
+					stick: '👺Eu falhei :( diculpa👺',
+					Iv: 'Diculpa, o link está inválido👺'
 				},
 				only: {
-					group: '❗ COMANDO SÓ PODE SER EXECUTADO EM GRUPOS❗ ',
-					ownerG: '❗COMANDO EXCLUSIVO PARA O PROPRIETÁRIO DO BOT.❗ ',
-					ownerB: '❗  COMANDO EXCLUSIVO PARA O PROPRIETÁRIO DO BOT.❗ ',
-					admin: ' ⚠️  COMANDO PERMITIDO SOMENTE PARA ADMS ⚠️ ',
-					Badmin: '❗O BOT PRECISA SER ADEMAR ;3 '
+					group: ' 👺 COMANDO SÓ PODE SER EXECUTADO EM GRUPOS❗ ',
+					ownerG: '👺 COMANDO EXCLUSIVO PARA O PROPRIETÁRIO DO BOT.❗ ',
+					ownerB: ' 👺  COMANDO EXCLUSIVO PARA O PROPRIETÁRIO DO BOT.❗ ',
+					admin: ' 👺 COMANDO PERMITIDO SOMENTE PARA ADMS ⚠️ ',
+					Badmin: '👺 O BOT PRECISA SER ADEMAR ;3 '
 				}
 			}
 
@@ -210,9 +210,8 @@ client.on('group-participants-update', async (anu) => {
 				case 'menu':
 					client.sendMessage(from, help(prefix), text)
 					break
-               case 'CRICRI: 
-				case 'cricri':
-					client.sendMessage(from, criador(prefix), text)
+				case 'criad':
+					client.sendMessage(from, criad(prefix), text)
 					break
 				case 'donasi':
 				case 'donate':
